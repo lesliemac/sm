@@ -27,8 +27,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv("SECRET_KEY")
+#SECRET_KEY = os.getenv("SECRET_KEY")
 
+SECRET_KEY="^5j#@n*!c6*g^phi@($0-shjyno9+nag6k&8%lgx8rze*c_&t4"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG")
 
@@ -40,7 +41,6 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'crispy_forms',
     'django_cleanup',
-
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.sites',
@@ -104,23 +104,23 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+#}
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'ms',
+        'USER': 'ms',
+        'PASSWORD': "cL3GP531$",
+#        'HOST': 'localhost',
+#        'PORT': '5432',
     }
 }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'socialNet',
-#         'USER': 'postgres',
-#         'PASSWORD': os.getenv("PGDB_PWD"),
-#         'HOST': 'localhost',
-#         'PORT': '5432',
-#     }
-# }
 
 
 # Password validation
@@ -147,7 +147,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Asia/Kolkata'
+TIME_ZONE = 'Africa/Johannesburg'
 
 USE_I18N = True
 
@@ -159,9 +159,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+#STATIC_ROOT = 'os.path.join(BASE_DIR, 'static')'
 STATIC_URL = '/static/'
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_ROOT = "/var/www/sm/blog/static/"
+#MEDIA_ROOT = 
+#MEDIA_ROOT = 'os.path.join(BASE_DIR, 'media')'
+MEDIA_ROOT = "/var/www/sm/media/"
 MEDIA_URL = '/media/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
