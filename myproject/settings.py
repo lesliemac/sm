@@ -178,18 +178,13 @@ CKEDITOR_CONFIGS = {
     },
 }
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
 
-#EMAIL_PORT = os.getenv("EMAIL_PORT")
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.nichehosters.com'
 EMAIL_USE_TLS = True
-#EMAIL_HOST_USER = os.getenv('EMAIL_USER')     # environment variable containing username
-#EMAIL_HOST_PASSWORD = os.getenv('EMAIL_PASS')  # environment variable containing password
 EMAIL_PORT = 587
-EMAIL_HOST_USER = "lesliemaclachlan@hotmail.com"
-EMAIL_HOST_PASSWORD = "kilt1111"
-#EMAIL_USER="lesliemaclachlan@hotmail.com"
-#EMAIL_PASS="kilt1111"
+EMAIL_HOST_USER = 'lesliem@nichehosters.com' #sender's email-id
+EMAIL_HOST_PASSWORD = 'cL3GP531$kilt11' #password associated with above email-id
 
 GOOGLE_RECAPTCHA_SECRET_KEY = os.getenv("GOOGLE_RECAPTCHA_SECRET_KEY")
 
