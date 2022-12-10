@@ -13,6 +13,7 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     likes = models.ManyToManyField(User, related_name="blogpost", blank=True)
     saves = models.ManyToManyField(User, related_name="blogsave", blank=True)
+    image = models.ImageField(default='default.jpg', upload_to='media',blank=True, null=True)
 
     def total_likes(self):
         return self.likes.count()

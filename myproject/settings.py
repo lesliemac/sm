@@ -14,6 +14,7 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 from django.contrib.messages import constants as messages
+from django.core.mail import send_mail
 
 # Loading ENV
 env_path = Path('.') / '.env'
@@ -49,7 +50,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
-
     'ckeditor',
     'allauth',
     'allauth.account',
@@ -180,10 +180,16 @@ CKEDITOR_CONFIGS = {
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = os.getenv("EMAIL_PORT")
+
+#EMAIL_PORT = os.getenv("EMAIL_PORT")
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.getenv('EMAIL_USER')     # environment variable containing username
-EMAIL_HOST_PASSWORD = os.getenv('EMAIL_PASS')  # environment variable containing password
+#EMAIL_HOST_USER = os.getenv('EMAIL_USER')     # environment variable containing username
+#EMAIL_HOST_PASSWORD = os.getenv('EMAIL_PASS')  # environment variable containing password
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "lesliemaclachlan@hotmail.com"
+EMAIL_HOST_PASSWORD = "kilt1111"
+#EMAIL_USER="lesliemaclachlan@hotmail.com"
+#EMAIL_PASS="kilt1111"
 
 GOOGLE_RECAPTCHA_SECRET_KEY = os.getenv("GOOGLE_RECAPTCHA_SECRET_KEY")
 
@@ -223,3 +229,4 @@ SOCIALACCOUNT_PROVIDERS = {
         ],
     }
 }
+DEBUG=True
